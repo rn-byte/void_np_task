@@ -42,7 +42,6 @@ class SignupScreen extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () {
                       signupController.signUp();
-                      Get.to(() => const LoginScreen());
                     },
                     child: const Text('Sign up')))
           ],

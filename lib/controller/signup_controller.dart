@@ -1,8 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:http/http.dart';
+
+import '../screen/login_screen.dart';
 
 class SignupController extends GetxController {
   final usernameController = TextEditingController().obs;
@@ -18,9 +21,11 @@ class SignupController extends GetxController {
           });
 
       var data = jsonDecode(response.body);
-      if (response.statusCode == 200) {
+      debugPrint(data['message']);
+      if (response.statusCode == 201) {
         debugPrint('Sign up Successfull');
-        debugPrint(data);
+        //debugPrint(data);
+        Get.to(() => const LoginScreen());
       }
     } catch (e) {
       debugPrint(e.toString());
