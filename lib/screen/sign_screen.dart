@@ -37,16 +37,14 @@ class SignupScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Obx(() {
-              return SizedBox(
-                  width: 200,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        signupController.signUp();
-                        Get.to(() => const LoginScreen());
-                      },
-                      child: const Text('Sign up')));
-            })
+            SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                    onPressed: () {
+                      signupController.signUp();
+                      Get.to(() => const LoginScreen());
+                    },
+                    child: const Text('Sign up')))
           ],
         ),
       ),

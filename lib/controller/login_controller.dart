@@ -19,7 +19,7 @@ class LoginController extends GetxController {
       );
       var data = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        debugPrint('Sign up Successfull');
+        debugPrint('Login Successfull');
         debugPrint(data);
       }
     } catch (e) {
