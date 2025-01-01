@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
@@ -35,17 +34,12 @@ class ImageController extends GetxController {
     // Uint8List bytes = await pickedFile!.readAsBytes();
     try {
       var request = http.MultipartRequest(
-          'POST', Uri.parse('https://interview-mock-api.onrender.com/upload'));
+          'POST', Uri.parse('https://api.escuelajs.co/api/v1/files/upload'));
 
       request.files.add(await http.MultipartFile.fromPath(
         'image', // Replace with your API field name
         image!.path,
       ));
-
-      // var file = http.MultipartFile(
-      //     'image', http.ByteStream.fromBytes(bytes), bytes.length,
-      //     filename: pickedFile!.name);
-      // request.files.add(file);
 
       // Send the request
       var response = await request.send();

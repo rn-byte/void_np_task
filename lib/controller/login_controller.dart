@@ -1,10 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:http/http.dart';
-
 import '../screen/dashboard.dart';
 
 class LoginController extends GetxController {
@@ -23,7 +21,7 @@ class LoginController extends GetxController {
       var data = jsonDecode(response.body);
       if (response.statusCode == 200) {
         debugPrint('Login Successfull');
-        Get.to(() => DashboardScreen());
+        Get.to(() => const DashboardScreen());
         debugPrint(data);
       }
     } catch (e) {
